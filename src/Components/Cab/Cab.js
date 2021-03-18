@@ -10,7 +10,7 @@ const Cab = (props) => {
                     <img className="w-50 mt-5" src={cab_image} alt="" />
                 </div>
                 <div className="d-flex justify-content-center" >
-                    <h6 >{cab_name}</h6>
+                    <h6 className="cabName" >{cab_name}</h6>
                 </div>
             </div>
         </div>

@@ -1,0 +1,17 @@
+.input {
+  border: none;
+  border-bottom: 1px solid #1890ff;
+  outline: none;
+  width: 100%;
+  margin-top: 20px;
+}
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: text-indent 0.4s 0.4s ease;
+  text-indent: -100%;
+  opacity: 1;
+}
+.custom-form {
+  height: 55vh;
+  width: 60vh;
+  border: 1px solid gray;
+}
