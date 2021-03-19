@@ -11,7 +11,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                        <Nav.Link href="#pricing">Destination</Nav.Link>
+                        <Nav.Link as={Link} to="/destination/car" >Destination</Nav.Link>
                         <Nav.Link href="#deets">Blog</Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">Contact</Nav.Link>
                         <Button variant="primary" as={Link} to="/login" > LogIn </Button>

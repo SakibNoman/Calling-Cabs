@@ -1,6 +1,13 @@
+import firebase from "firebase/app";
+import "firebase/auth";
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import firebaseConfig from './firebase.config';
 import './Login.css';
+
+if (firebase.apps.length === 0) {
+    firebase.initializeApp(firebaseConfig);
+}
 
 const Login = () => {
 
