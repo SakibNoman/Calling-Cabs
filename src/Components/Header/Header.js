@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const Header = () => {
+    const [{ isSignedIn, name, email }] = useContext(UserContext);
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -12,9 +14,9 @@ const Header = () => {
                     <Nav className="ml-auto">
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/destination/car" >Destination</Nav.Link>
-                        <Nav.Link href="#deets">Blog</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">Contact</Nav.Link>
-                        <Button variant="primary" as={Link} to="/login" > LogIn </Button>
+                        <Nav.Link >Blog</Nav.Link>
+                        <Nav.Link >Contact</Nav.Link>
+                        {isSignedIn ? <Nav.Link className="text-white font-weight-bolder" >{name || email}</Nav.Link> : <Button variant="primary" as={Link} to="/login" > LogIn </Button>}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
