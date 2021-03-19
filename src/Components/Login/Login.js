@@ -25,8 +25,8 @@ const Login = () => {
                         </Link>
                     </div>}
                     <button type="button" className="btn btn-primary btn-block mt-3">{option === 'login' ? "Login" : "Create an account"}</button>
-                    <div className="d-flex justify-content-between align-items-baseline" >
-                        <p className="text-center mt-3" >{option === 'login' ? "Don't have an account?" : "Already have an account?"} </p>
+                    <div className="d-flex justify-content-center align-items-baseline" >
+                        <p className="text-center mt-3 mr-2" >{option === 'login' ? "Don't have an account? " : "Already have an account? "} </p>
                         <Link onClick={() => option === 'login' ? setOption('signup') : setOption('login')} >{option === 'login' ? "Create an account" : "Login"}</Link>
                     </div>
                 </div>
