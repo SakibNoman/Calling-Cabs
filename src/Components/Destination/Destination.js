@@ -26,7 +26,7 @@ const Destination = () => {
     }
 
     return (
-        <div className="row" >
+        <div className="row mx-auto" >
             <div className="col-md-4">
                 <div className="container" >
                     {!isSearched && <form className=" Custom-cart container p-4 mt-5"  >
