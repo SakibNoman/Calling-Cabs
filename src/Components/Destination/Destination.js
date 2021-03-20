@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import fakeData from '../../fakeData.json';
 import './Destination.css';
 import HiredVehicle from './HiredVehicle';
+import MyMap from './MyMap';
 
 const Destination = () => {
 
@@ -74,8 +75,8 @@ const Destination = () => {
                     }
                 </div>
             </div>
-            <div className="col-md-8">
-
+            <div className="col-md-8 d-flex justify-content-center my-5">
+                <MyMap></MyMap>
             </div>
         </div>
     );
