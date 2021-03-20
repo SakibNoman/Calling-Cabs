@@ -2,3 +2,36 @@
   border-radius: 15px;
   background-color: #efefef;
 }
+.routeName {
+  background-color: rgb(17, 0, 255);
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+}
+.timeline {
+  border-left: 2px solid white;
+  padding: 0 10px 0 10px;
+  position: relative;
+}
+.content1::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 4px;
+  left: -6px;
+}
+.content2::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 32px;
+  left: -6px;
+}
