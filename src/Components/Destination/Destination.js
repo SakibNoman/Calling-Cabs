@@ -6,18 +6,21 @@ import HiredVehicle from './HiredVehicle';
 import MyMap from './MyMap';
 
 const Destination = () => {
-
+    //destructuring route parameter
     const { vehicle } = useParams();
 
+    //finding selected vehicle
     const hiredVehicle = fakeData.find(each => each.cab_name === vehicle);
 
+    //useState hook for Conditional Formatting
+    const [isSearched, setIsSearched] = useState(false)
 
+    //useState hook for location info
     const [location, setLocation] = useState({
         pickFrom: '',
         pickTo: '',
         time: ''
     })
-    const [isSearched, setIsSearched] = useState(false)
 
     const inputHandler = (e) => {
         const newLocation = { ...location };
@@ -29,6 +32,7 @@ const Destination = () => {
         <div className="row mx-auto" >
             <div className="col-md-4">
                 <div className="container" >
+                    {/* before Search [form to take location and date] */}
                     {!isSearched && <form className=" Custom-cart container p-4 mt-5"  >
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Pick from</label>
@@ -45,33 +49,34 @@ const Destination = () => {
                         </div>
                         <button onClick={() => isSearched ? setIsSearched(false) : setIsSearched(true)} type="submit" className="btn btn-primary btn-block">Search</button>
                     </form>}
-                    {
-                        isSearched && <form className=" Custom-cart container p-4 mt-5 d-flex flex-column justify-content-center"  >
-                            <div className="routeName row mx-0 d-flex justify-content-around align-baseline align-items-center">
-                                <col-6>
-                                    <div className="timeline">
-                                        <div className="content1">
-                                            <h6>{location.pickFrom}</h6>
-                                        </div>
-                                        <div className="content2">
-                                            <h6>{location.pickTo}</h6>
-                                        </div>
+
+                    {/* After Search to show route and Available cabs */}
+                    {isSearched && <form className=" Custom-cart container p-4 mt-5 d-flex flex-column justify-content-center" >
+                        <div className="routeName row mx-0 d-flex justify-content-around align-baseline align-items-center">
+                            <col-6>
+                                <div className="timeline">
+                                    <div className="content1">
+                                        <h6>{location.pickFrom}</h6>
                                     </div>
-                                </col-6>
-                                <col-6 >
-                                    <h5>Date: {location.time}</h5>
-                                </col-6>
-                            </div>
-                            <div className="row mx-0 container routeName" >
-                                <HiredVehicle hiredVehicle={hiredVehicle} ></HiredVehicle>
-                            </div>
-                            <div className="row mx-0 container routeName" >
-                                <HiredVehicle hiredVehicle={hiredVehicle} ></HiredVehicle>
-                            </div>
-                            <div className="row mx-0 container routeName" >
-                                <HiredVehicle hiredVehicle={hiredVehicle} ></HiredVehicle>
-                            </div>
-                        </form>
+                                    <div className="content2">
+                                        <h6>{location.pickTo}</h6>
+                                    </div>
+                                </div>
+                            </col-6>
+                            <col-6 >
+                                <h5>Date: {location.time}</h5>
+                            </col-6>
+                        </div>
+                        <div className="row mx-0 container routeName" >
+                            <HiredVehicle hiredVehicle={hiredVehicle} ></HiredVehicle>
+                        </div>
+                        <div className="row mx-0 container routeName" >
+                            <HiredVehicle hiredVehicle={hiredVehicle} ></HiredVehicle>
+                        </div>
+                        <div className="row mx-0 container routeName" >
+                            <HiredVehicle hiredVehicle={hiredVehicle} ></HiredVehicle>
+                        </div>
+                    </form>
                     }
                 </div>
             </div>

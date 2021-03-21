@@ -12,7 +12,10 @@ if (firebase.apps.length === 0) {
 
 const Login = () => {
 
+    //useState hook to detect login and signup
     const [option, setOption] = useState('login');
+
+    //useState hook for user data
     const [user, setUser] = useState({
         isSignedIn: false,
         name: '',
@@ -23,13 +26,14 @@ const Login = () => {
     })
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    //redirect purposes after login
     const history = useHistory();
     const location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
 
-
+    //Google SignIn
     const provider = new firebase.auth.GoogleAuthProvider();
-
     const handleSignIn = () => {
         firebase.auth().signInWithPopup(provider)
             .then(res => {
@@ -47,6 +51,8 @@ const Login = () => {
                 console.log(err);
             })
     }
+
+    //taking user input and validating
     const handleBlur = (e) => {
         let isFormValid = true;
         if (e.target.name === 'email') {
@@ -76,7 +82,7 @@ const Login = () => {
         }
     }
 
-
+    //Creating or login with email and password
     const handleSubmit = (e) => {
         if (option === 'signup' && user.email && user.password) {
             firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
@@ -117,6 +123,7 @@ const Login = () => {
         e.preventDefault();
     }
 
+    //updating user name to firebase
     const updateUserInfo = name => {
         const user = firebase.auth().currentUser;
 

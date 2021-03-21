@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 
 const Header = () => {
+
+    //destructuring shared object from context
     const [{ isSignedIn, name, email }] = useContext(UserContext);
+
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">

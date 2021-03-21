@@ -4,7 +4,6 @@ import {
 
   Route, Switch
 } from "react-router-dom";
-import './App.css';
 import Destination from "./Components/Destination/Destination";
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
@@ -15,7 +14,6 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({})
-  console.log(loggedInUser);
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
