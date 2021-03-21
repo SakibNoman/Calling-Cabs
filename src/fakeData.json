@@ -2,28 +2,28 @@
   {
     "cab_id": 1,
     "cab_name": "Taxi",
-    "cab_image": "https://i.ibb.co/Phs2Qdd/cab1.jpg",
+    "cab_image": "https://res.cloudinary.com/sakibnoman/image/upload/v1616339314/cab1_sqzvxk.jpg",
     "cab_capacity": 4,
     "cab_fare": "$63"
   },
   {
     "cab_id": 2,
     "cab_name": "Bus",
-    "cab_image": "https://i.ibb.co/4FNS247/cab2.jpg",
+    "cab_image": "https://res.cloudinary.com/sakibnoman/image/upload/v1616339315/cab2_zvjbrk.jpg",
     "cab_capacity": 32,
     "cab_fare": "$300"
   },
   {
     "cab_id": 3,
     "cab_name": "Lorry",
-    "cab_image": "https://i.ibb.co/K9zFt4x/cab3.jpg",
+    "cab_image": "https://res.cloudinary.com/sakibnoman/image/upload/v1616339315/cab3_qx93ne.jpg",
     "cab_capacity": 1,
     "cab_fare": "$200"
   },
   {
     "cab_id": 4,
     "cab_name": "Van",
-    "cab_image": "https://i.ibb.co/PDG574h/cab4.jpg",
+    "cab_image": "https://res.cloudinary.com/sakibnoman/image/upload/v1616339308/cab4_ayzvb9.jpg",
     "cab_capacity": 8,
     "cab_fare": "$130"
   }
